@@ -9,7 +9,13 @@ import SolidCounter from '../components/SolidCounter.jsx';
 // It will run during the build, but never in the browser.
 // All variables are available to use in the HTML template below.
 let title = 'My Astro Site';
+let test = import.meta.env.host
 
+const response = await fetch(`${import.meta.env.PUBLIC_API_HOST}/posts/61f5423b9ffbde02075d43dd`);
+const json = await response.json();
+const { posts } = json;
+const currentPost = posts[0];
+let {html} = currentPost;
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
 ---
@@ -43,20 +49,9 @@ let title = 'My Astro Site';
 			</div>
 		</header>
 
-		<Tour />
-
-		<!--
-
-		You can also use imported framework components directly in your markup!
-		
-		Note: by default, these components are NOT interactive on the client.
-		The `:visible` directive tells Astro to make it interactive.
-		
-		See https://docs.astro.build/core-concepts/component-hydration/ 
-
-		-->
-
-		<SolidCounter client:visible />
+		<div class="w-full">
+      {html}
+    </div>
 	</main>
 </body>
 </html>

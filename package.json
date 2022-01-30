@@ -6,10 +6,12 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "mock": "json-server --watch dev-tools/mock/db.json --port 3001"
   },
   "devDependencies": {
+    "@astrojs/renderer-solid": "^0.3.1",
     "astro": "^0.22.19",
-    "@astrojs/renderer-solid": "^0.3.1"
+    "json-server": "^0.17.0"
   }
 }
