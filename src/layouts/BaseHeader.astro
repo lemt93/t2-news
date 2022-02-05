@@ -1,0 +1,44 @@
+---
+// Astro
+---
+
+<header id="main-header"
+				class="flex flex-row
+							 w-full
+							 items-center justify-between
+							 px-12 py-2
+							 sticky top-0 bg-white/90 shadow-md">
+	<div class="flex">
+		<a class="flex items-center justify-center" href="/">
+			<img
+				width="36"
+				height="36"
+				src="/assets/logo.svg"
+				alt="t2badminton logo"
+				title="Next-gen shopping with t2badminton" />
+			<h2 class="mx-4 text-2xl font-semibold">t2badminton</h2>
+		</a>
+	</div>
+
+	<nav>
+		<ul class="flex flex-row">
+			<li><a class="px-4 py-2 text-lg" href="https://t2delivery.com">Shop</a></li>
+		</ul>
+	</nav>
+</header>
+<div id="sentinel"></div>
+<script>
+	const header = document.getElementById('main-header');
+	const sentinel = document.getElementById('sentinel');
+	const headerDOMRect = header.getBoundingClientRect();
+	const topMargin = (headerDOMRect.top + headerDOMRect.height);
+
+	const observer = new IntersectionObserver( 
+		([e]) => header.classList.toggle('shadow-md', e.intersectionRatio < 1),
+		{
+			threshold: [1],
+			rootMargin: `-${topMargin}px 0px 0px 0px`, // ~ half of header height
+		}
+	);
+	observer.observe(sentinel);
+</script>

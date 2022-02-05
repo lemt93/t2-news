@@ -1,8 +1,12 @@
+// import 'dotenv/config';
+// console.log(process.env.PUBLIC_API_HOST);
+
 const backend = {
   API_HOST: process.env.BACKEND_API_HOST || 'http://localhost:3001',
   API_KEY: process.env.BACKEND_API_KEY || 'default-key-for-local'
 };
-console.log('Backend config',backend);
+console.log('Dev server - Backend proxy config',backend);
+
 /** @type {import('astro').AstroUserConfig} */
 export default {
   // projectRoot: '.',     // Where to resolve all URLs relative to. Useful if you have a monorepo project.
@@ -16,10 +20,10 @@ export default {
   devOptions: {
     // hostname: 'localhost',  // The hostname to run the dev server on.
     // port: 3000,             // The port to run the dev server on.
-    // tailwindConfig: '',     // Path to tailwind.config.js if used, e.g. './tailwind.config.js'
+    tailwindConfig: './tailwind.config.js',     // Path to tailwind.config.js if used, e.g. './tailwind.config.js'
   },
   renderers: [
-    "@astrojs/renderer-solid"
+    "@astrojs/renderer-svelte"
   ],
   vite: {
     server: {

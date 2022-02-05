@@ -1,0 +1,31 @@
+---
+import BaseHeader from '../layouts/BaseHeader.astro';
+import BaseFooter from '../layouts/BaseFooter.astro';
+import BaseBody from '../layouts/BaseBody.astro';
+
+let {title} = Astro.props;
+---
+
+
+<html lang="vi">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>{title}</title>
+
+	<link rel="icon" type="image/x-icon" href="/favicon.svg" />
+  <link rel="stylesheet" href={Astro.resolve("../styles/global.css")} />
+
+	<style global>
+	</style>
+</head>
+<body class="flex flex-col min-h-screen">
+  <BaseHeader />
+
+	<BaseBody>
+		<slot />
+	</BaseBody>
+
+	<BaseFooter />
+</body>
+</html>

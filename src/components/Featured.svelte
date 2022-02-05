@@ -1,0 +1,3 @@
+<section class="featured">
+
+</section>
