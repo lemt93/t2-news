@@ -31,7 +31,7 @@
 	const header = document.getElementById('main-header');
 	const sentinel = document.getElementById('sentinel');
 	const headerDOMRect = header.getBoundingClientRect();
-	const topMargin = (headerDOMRect.top + headerDOMRect.height);
+	const topMargin = (headerDOMRect.top + headerDOMRect.height) - 1;
 
 	const observer = new IntersectionObserver( 
 		([e]) => header.classList.toggle('shadow-md', e.intersectionRatio < 1),
