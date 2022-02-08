@@ -1,7 +1,7 @@
 <script context="module">
 	export const prerender = true;
 	export const router = false;
-	export const hydrate = true;
+	export const hydrate = false;
 </script>
 
 <svelte:head>

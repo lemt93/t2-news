@@ -39,7 +39,7 @@
 			<img
 				width="36"
 				height="36"
-				src="/static/favicon.svg"
+				src="/favicon.svg"
 				alt="t2badminton logo"
 				title="Next-gen shopping with t2badminton"
 			/>
@@ -55,7 +55,7 @@
                   text-lg font-semibold text-gray-800 hover:text-white
                   py-2 px-4
                   border border-gray-800 hover:border-transparent rounded"
-					href="/shop"
+					rel="external" href="https://t2delivery.com"
 				>
 					Shop
 				</a>
@@ -72,13 +72,13 @@
 	class="flex flex-col-reverse sm:flex-row
 							 w-full
 							 items-center justify-between
-							 py-4"
+							 px-2 py-4"
 >
 	<div class="flex flex items-center justify-center">
 		<img
 			width="24"
 			height="24"
-			src="/static/favicon.svg"
+			src="/favicon.svg"
 			alt="t2badminton logo"
 			title="Next-gen shopping with t2badminton"
 		/>
@@ -87,7 +87,7 @@
 
 	<nav>
 		<ul class="flex flex-row">
-			<li><a class="px-4 py-2 text-lg" href="https://t2delivery.com">Shop</a></li>
+			<li><a class="px-4 py-2 text-lg" rel="external" href="https://t2delivery.com">Shop</a></li>
 			<li><a class="px-4 py-2 text-lg" href="/lien-he">Liên hệ</a></li>
 		</ul>
 	</nav>
